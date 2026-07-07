@@ -33,6 +33,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,247,241,.9);backdrop
 .hero h1 em{font-style:normal;color:var(--accent-ink)}
 .lead{font-size:clamp(16px,2.3vw,20px);color:var(--muted);max-width:560px;margin:0 0 26px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-ink);background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:999px;box-shadow:var(--shadow)}
+.hwrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hphoto img{width:100%;border-radius:22px;object-fit:cover;aspect-ratio:4/5;max-height:540px;box-shadow:0 22px 55px rgba(120,60,15,.18)}
 
 .card-apply{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;max-width:560px}
 .card-apply h2{margin:2px 0 4px;font-size:17px}
@@ -79,6 +81,11 @@ footer p{margin:0 0 12px}
 footer .flogo{font-weight:800;font-size:18px;color:#fff;margin-bottom:14px}
 .disc{border-top:1px solid #3a3733;margin-top:18px;padding-top:16px;color:#948d84}
 
+@media(max-width:860px){
+  .hwrap{grid-template-columns:1fr;gap:24px}
+  .hphoto{order:-1}
+  .hphoto img{aspect-ratio:16/10;max-height:260px}
+}
 @media(max-width:720px){
   .steps,.benefits{grid-template-columns:1fr}
   .amounts{grid-template-columns:repeat(3,1fr)}
@@ -96,6 +103,8 @@ footer .flogo{font-weight:800;font-size:18px;color:#fff;margin-bottom:14px}
 
 <div class="hero">
   <div class="wrap">
+   <div class="hwrap">
+    <div class="hcol">
     <span class="eyebrow">Online Lenders Alliance member since 2014</span>
     <h1>Personal loans, processed <em>quickly.</em></h1>
     <p class="lead">One short request and lenders in our network review it — with no commitment until you accept. Cash deposited straight to your bank, as fast as today.</p>
@@ -117,6 +126,9 @@ footer .flogo{font-weight:800;font-size:18px;color:#fff;margin-bottom:14px}
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Free · walk away anytime</span>
       </div>
     </div>
+    </div>
+    <div class="hphoto"><img src="../assets/hero-woman.jpg" alt="Customer reviewing her loan options by phone at home"></div>
+   </div>
   </div>
 </div>
 
